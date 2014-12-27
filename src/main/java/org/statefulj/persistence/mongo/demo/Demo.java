@@ -44,6 +44,13 @@ public class Demo implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
+		logger.debug("+----------------------------------------------+");
+		logger.debug("|                                              |");
+		logger.debug("|            Start Demo                        |");
+		logger.debug("|                                              |");
+		logger.debug("+----------------------------------------------+");
+		logger.debug("");
+		
 		// Instantiate the Stateful Entity
 		//
 		Foo foo = new Foo();
@@ -55,18 +62,21 @@ public class Demo implements CommandLineRunner {
 
 		// Drive the FSM with a series of events: eventA, eventA, eventA
 		//
+		logger.debug("");
 		fsm.onEvent(foo, eventA);  // stateA(EventA) -> stateB/actionA
 		
 		foo = fooRepository.findOne(foo.getId());
 		logger.debug("Foo={}", foo);
 		Assert.assertEquals(stateB.getName(), foo.getStateDocument().getState());
 
+		logger.debug("");
 		fsm.onEvent(foo, eventB);  // stateA(EventB) -> stateB/actionB
 
 		foo = fooRepository.findOne(foo.getId());
 		logger.debug("Foo={}", foo);
 		Assert.assertEquals(stateC.getName(), foo.getStateDocument().getState());
 
+		logger.debug("");
 		fsm.onEvent(foo, eventC);  // stateB(EventC) -> stateA/noop
 
 		foo = fooRepository.findOne(foo.getId());
@@ -74,6 +84,7 @@ public class Demo implements CommandLineRunner {
 		Assert.assertEquals(stateB.getName(), foo.getStateDocument().getState());
 
 		foo.setBar(true);
+		logger.debug("");
 		fsm.onEvent(foo, eventA);  // stateB(EventA) -> stateB/NOOP
 
 		foo = fooRepository.findOne(foo.getId());
@@ -81,12 +92,19 @@ public class Demo implements CommandLineRunner {
 		Assert.assertEquals(stateB.getName(), foo.getStateDocument().getState());
 
 		foo.setBar(false);
+		logger.debug("");
 		fsm.onEvent(foo, eventA);  // stateB(EventA) -> stateC/NOOP
 
 		foo = fooRepository.findOne(foo.getId());
 		logger.debug("Foo={}", foo);
 		Assert.assertEquals(stateC.getName(), foo.getStateDocument().getState());
 
+		logger.debug("");
+		logger.debug("+----------------------------------------------+");
+		logger.debug("|                                              |");
+		logger.debug("|            End Demo                          |");
+		logger.debug("|                                              |");
+		logger.debug("+----------------------------------------------+");
 	}
 
 }

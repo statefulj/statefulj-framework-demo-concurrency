@@ -100,6 +100,7 @@
 						<configuration>
 							<port>37017</port>
 							<version>2.6.6</version>
+							<logging>none</logging>
 						</configuration>
 					</execution>
 				</executions>
