@@ -5,7 +5,7 @@
 
 	<groupId>org.statefulj.persistence</groupId>
 	<artifactId>statefulj-persistence-mongo-demo</artifactId>
-	<version>0.9-SNAPSHOT</version>
+	<version>0.9</version>
 	<packaging>jar</packaging>
 
 	<name>statefulj-persistence-mongo-demo</name>
