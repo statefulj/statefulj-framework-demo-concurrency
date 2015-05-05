@@ -3,17 +3,17 @@
 
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
-			<pattern>%-22(%logger{19}) %msg%n</pattern>
+			<pattern>%msg%n</pattern>
 		</encoder>
 	</appender>
 
 	<!-- Application Loggers -->
-	<logger name="org.statefulj">
+	<logger name="org.statefulj.concurrency">
 		<level value="DEBUG" />
 	</logger>
 	
 	<!-- Root Logger -->
-	<root level="WARN">
+	<root level="ERROR">
 		<appender-ref ref="STDOUT" />
 	</root>
 

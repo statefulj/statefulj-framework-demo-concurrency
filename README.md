@@ -1,12 +1,12 @@
-Mongo Persistence Demo
+Concurrency Demo
 ----------------------
 
-Demonstrate how to construct an FSM with the Mongo Persister.
+Demonstrate StatefulJ makes it easy to manage concurrency access
 
-#### Repo: https://github.com/statefulj/statefulj-persistence-mongo-demo
+#### Repo: https://github.com/statefulj/statefulj-framework-demo-concurrency
 
 #### Steps
 
-1. `git clone git@github.com:statefulj/statefulj-persistence-mongo-demo.git`
-1. `cd statefulj-persistence-mongo-demo`
+1. `git clone git@github.com:statefulj/statefulj-framework-demo-concurrency.git`
+1. `cd statefulj-framework-demo-concurrency`
 1. `mvn spring-boot:run`

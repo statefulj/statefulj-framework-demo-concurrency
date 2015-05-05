@@ -15,8 +15,9 @@
  * limitations under the License.
  * 
  */
-package org.statefulj.persistence.mongo.demo.config;
+package org.statefulj.concurrency.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
@@ -25,14 +26,20 @@ import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
 
 @Configuration
-@EnableMongoRepositories("org.statefulj.persistence.mongo.demo")
+@EnableMongoRepositories("org.statefulj.concurrency")
 public class DBConfig extends AbstractMongoConfiguration {
 	
 	public final static String DB_NAME = "statefulj-demo";
+	
+	@Value("${mongo.port:37017}")
+	private int mongoPort;
+
+	@Value("${mongo.host:localhost}")
+	private String mongoHost;
 
 	@Override
 	public Mongo mongo() throws Exception {
-	    return new MongoClient("localhost", 37017);
+		return new MongoClient(mongoHost, mongoPort);
 	}
 
 	/* (non-Javadoc)

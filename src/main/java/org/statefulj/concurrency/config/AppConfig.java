@@ -15,19 +15,22 @@
  * limitations under the License.
  * 
  */
-package org.statefulj.persistence.mongo.demo;
+package org.statefulj.concurrency.config;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.statefulj.framework.core.StatefulFactory;
 
+/**
+ * @author Andrew Hall
+ *
+ */
 @Configuration
-@ComponentScan
-@EnableAutoConfiguration
-public class DemoBootStrap {
+public class AppConfig {
+	
+	@Bean
+	public StatefulFactory statefulFactory() {
+		return new StatefulFactory();
+	}
 
-    public static void main(String[] args) {
-        SpringApplication.run(DemoBootStrap.class, args);
-    }
 }

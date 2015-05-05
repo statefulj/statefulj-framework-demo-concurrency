@@ -15,14 +15,19 @@
  * limitations under the License.
  * 
  */
-package org.statefulj.persistence.mongo.demo.foo;
+package org.statefulj.concurrency;
 
-import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
-/**
- * @author Andrew Hall
- *
- */
-public interface FooRepository extends MongoRepository<Foo, String> {
+@Configuration
+@ComponentScan
+@EnableAutoConfiguration
+public class ConcurrencyBootStrap {
 
+    public static void main(String[] args) {
+        SpringApplication.run(ConcurrencyBootStrap.class, args);
+    }
 }

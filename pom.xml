@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.statefulj.persistence</groupId>
-	<artifactId>statefulj-persistence-mongo-demo</artifactId>
-	<version>0.9</version>
+	<groupId>org.statefulj</groupId>
+	<artifactId>statefulj-framework-demo-concurrency</artifactId>
+	<version>1.0.5</version>
 	<packaging>jar</packaging>
 
-	<name>statefulj-persistence-mongo-demo</name>
-	<description>Demo project for StatefulJ Mongo persistence</description>
+	<name>statefulj-framework-demo-concurrency</name>
+	<description>StatefulJ concurrency demo</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -20,9 +20,9 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<start-class>org.statefulj.persistence.mongo.demo.DemoBootStrap</start-class>
-		<java.version>1.7</java.version>
-		<statefulj.version>0.9-SNAPSHOT</statefulj.version>
+		<start-class>org.statefulj.concurrency.ConcurrencyBootStrap</start-class>
+		<java.version>1.8</java.version>
+		<statefulj.version>${project.version}</statefulj.version>
 	</properties>
 
 	<dependencies>
@@ -35,8 +35,8 @@
 			<artifactId>logback-classic</artifactId>
 			</dependency>
 		<dependency>
-			<groupId>org.statefulj.persistence</groupId>
-			<artifactId>statefulj-persistence-mongo</artifactId>
+			<groupId>org.statefulj.framework</groupId>
+			<artifactId>statefulj-framework-persistence-mongo</artifactId>
 			<version>${statefulj.version}</version>
 		</dependency>
 		<dependency>
@@ -47,6 +47,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jta-atomikos</artifactId>
 		</dependency>
 	</dependencies>
 
