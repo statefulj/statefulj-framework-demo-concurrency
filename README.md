@@ -1,7 +1,7 @@
 Concurrency Demo
 ----------------------
 
-Demonstrate StatefulJ makes it easy to manage concurrency access
+Demonstration of how StatefulJ makes it easy to manage concurrency
 
 #### Repo: https://github.com/statefulj/statefulj-framework-demo-concurrency
 
